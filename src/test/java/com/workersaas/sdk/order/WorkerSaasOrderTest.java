@@ -10,6 +10,8 @@ import com.workersaas.sdk.model.order.create.OrderCreateRequest;
 import com.workersaas.sdk.model.order.create.OrderCreateResponse;
 import com.workersaas.sdk.model.order.query.OrderQueryRequest;
 import com.workersaas.sdk.model.order.query.OrderQueryResponse;
+import com.workersaas.sdk.model.order.query.QueryTaskAgreementDetailRequest;
+import com.workersaas.sdk.model.order.query.QueryTaskAgreementDetailResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -40,11 +42,8 @@ public class WorkerSaasOrderTest {
     }
 
     public static void main(String[] args) {
-        // 创建订单
-        String outerTradeNo = create();
-
         // 查询已创建的订单
-        query("D202410010000000001");
+        getTaskAgreementDetail("68468163518");
     }
 
     /**
@@ -82,5 +81,14 @@ public class WorkerSaasOrderTest {
         log.info(String.format("查询订单请求数据: %s", Json.toString(request)));
         OrderQueryResponse response = CLIENT.request(request);
         log.info(String.format("查询订单响应数据: %s", Json.toString(response)));
+    }
+
+
+    private static void getTaskAgreementDetail(String tradeNo){
+        QueryTaskAgreementDetailRequest request = new QueryTaskAgreementDetailRequest()
+                .setTradeNo(tradeNo);
+                log.info(String.format("查询订单请求数据: %s", Json.toString(request)));
+        QueryTaskAgreementDetailResponse queryTaskAgreementDetailResponse = CLIENT.request(request);
+        log.info(String.format("查询订单响应数据: %s", Json.toString(queryTaskAgreementDetailResponse)));
     }
 }
