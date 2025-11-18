@@ -3,9 +3,13 @@ package com.workersaas.sdk;
 import com.workersaas.sdk.common.base.WorkerSaasConstant;
 
 public class Config {
-    public static final String APP_KEY = "bIKpqW0qEHIzlDExliECKNpxf7Ymi6wN";
+    // 企业
+//    public static final String APP_KEY = "enterprise";
 
-    public static final String APP_SECRET = "OXzgKOXCgbQTXYSFlpT3SgavqO6mYa6Gb6ENhL3nAG8=";
+    // 园区
+    public static final String APP_KEY = "park";
+    public static final String APP_SECRET = "/GipF4ZC7wUiUCPkvgQJ6o5ukFGM/LS/ykmSclTPhK0=";
 
-    public static final String GATEWAY = WorkerSaasConstant.GATEWAY_SANDBOX;
+
+    public static final String GATEWAY = WorkerSaasConstant.GATEWAY_LOCAL;
 }

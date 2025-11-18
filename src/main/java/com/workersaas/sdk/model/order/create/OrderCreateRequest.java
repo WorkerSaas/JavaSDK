@@ -25,16 +25,6 @@ public class OrderCreateRequest extends AbstractRequest<OrderCreateResponse> {
     private String outerTradeNo;
 
     /**
-     * 真实姓名
-     */
-    private String realName;
-
-    /**
-     * 手机号
-     */
-    private String phone;
-
-    /**
      * 证件号
      */
     private String idCard;
@@ -96,46 +86,6 @@ public class OrderCreateRequest extends AbstractRequest<OrderCreateResponse> {
      */
     public OrderCreateRequest setOuterTradeNo(String outerTradeNo) {
         this.outerTradeNo = outerTradeNo;
-        return this;
-    }
-
-    /**
-     * 真实姓名
-     *
-     * @return 真实姓名
-     */
-    public String getRealName() {
-        return realName;
-    }
-
-    /**
-     * 设置真实姓名
-     *
-     * @param realName 真实姓名
-     * @return 当前实例
-     */
-    public OrderCreateRequest setRealName(String realName) {
-        this.realName = realName;
-        return this;
-    }
-
-    /**
-     * 手机号
-     *
-     * @return 手机号
-     */
-    public String getPhone() {
-        return phone;
-    }
-
-    /**
-     * 设置手机号
-     *
-     * @param phone 手机号
-     * @return 当前实例
-     */
-    public OrderCreateRequest setPhone(String phone) {
-        this.phone = phone;
         return this;
     }
 
