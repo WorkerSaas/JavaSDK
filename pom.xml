@@ -6,7 +6,7 @@
 
     <groupId>com.workersaas.sdk</groupId>
     <artifactId>WorkerSaasSdk</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>WorkerSaasSdk</name>
     <description>WorkerSaasSdk</description>
 
