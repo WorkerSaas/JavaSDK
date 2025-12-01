@@ -9,7 +9,12 @@ public class WorkerSaasConstant {
     /**
      * 生产网关
      */
-    public static final String GATEWAY_PRODUCTION = "https://open.workersaas.com/api/open/";
+    public static final String GATEWAY_PRODUCTION = "https://gateway.workersaas.com/open/";
+
+    /**
+     * 预发网关
+     */
+    public static final String GATEWAY_PREVIEW = "https://pre.workersaas.com/api/open/";
 
     /**
      * 测试网关

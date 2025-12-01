@@ -35,10 +35,10 @@ public class WorkerSaasTaskPushTest {
 
     public static void main(String[] args) {
         TaskPushRequest request = new TaskPushRequest()
-                .setTaskId(1L)
-                .setIdCard("110101199001011234")
-                .setRealName("张三")
-                .setPhone("13800000000");
+                .setTaskId(5L)
+                .setIdCard("500240199110030157")
+                .setRealName("马建")
+                .setPhone("18523749565");
         log.info(String.format("报名任务参数: %s", Json.toString(request)));
         TaskPushResponse response = CLIENT.request(request);
         log.info(String.format("报名任务返回: %s", Json.toString(response)));

@@ -10,8 +10,6 @@ import com.workersaas.sdk.model.order.create.OrderCreateRequest;
 import com.workersaas.sdk.model.order.create.OrderCreateResponse;
 import com.workersaas.sdk.model.order.query.OrderQueryRequest;
 import com.workersaas.sdk.model.order.query.OrderQueryResponse;
-import com.workersaas.sdk.model.order.query.QueryTaskAgreementDetailRequest;
-import com.workersaas.sdk.model.order.query.QueryTaskAgreementDetailResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -42,8 +40,11 @@ public class WorkerSaasOrderTest {
     }
 
     public static void main(String[] args) {
+        // 创建订单
+//        String outerTradeNo = create();
+
         // 查询已创建的订单
-        getTaskAgreementDetail("68468163518");
+        query("P20251201000052183");
     }
 
     /**
@@ -54,16 +55,14 @@ public class WorkerSaasOrderTest {
     private static String create() {
         // 设置参数
         OrderCreateRequest request = new OrderCreateRequest()
-                .setOuterTradeNo("D202410010000000002")
+                .setOuterTradeNo("D20251102000000005")
                 .setBizAccount("13888888888")
-                .setTaskId(1L)
+                .setTaskId(5L)
                 .setBalance(1D)
-                .setRealName("凌小云")
-                .setPhone("17666666666")
                 .setReason("服务费")
-                .setPayAccount("17666666666")
+                .setPayAccount("majhamm@qq.com")
                 .setIdCardType(IdCardType.CHINA_ID_CARD)
-                .setIdCard("500000000000");
+                .setIdCard("500240199110030157");
         log.info(String.format("创建订单请求数据: %s", Json.toString(request)));
         OrderCreateResponse response = CLIENT.request(request);
         log.info(String.format("创建订单响应数据: %s", Json.toString(response)));
@@ -81,14 +80,5 @@ public class WorkerSaasOrderTest {
         log.info(String.format("查询订单请求数据: %s", Json.toString(request)));
         OrderQueryResponse response = CLIENT.request(request);
         log.info(String.format("查询订单响应数据: %s", Json.toString(response)));
-    }
-
-
-    private static void getTaskAgreementDetail(String tradeNo){
-        QueryTaskAgreementDetailRequest request = new QueryTaskAgreementDetailRequest()
-                .setTradeNo(tradeNo);
-                log.info(String.format("查询订单请求数据: %s", Json.toString(request)));
-        QueryTaskAgreementDetailResponse queryTaskAgreementDetailResponse = CLIENT.request(request);
-        log.info(String.format("查询订单响应数据: %s", Json.toString(queryTaskAgreementDetailResponse)));
     }
 }

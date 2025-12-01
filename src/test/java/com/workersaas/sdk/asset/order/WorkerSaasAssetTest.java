@@ -42,7 +42,7 @@ public class WorkerSaasAssetTest {
 
     private static void getDownloadUrl() {
         GetAssetDownloadUrlRequest request = new GetAssetDownloadUrlRequest()
-                .setUrl("agreement/1763460597476_logo_副本.png");
+                .setUrl("/agreement/push/ewogICAgImlkQ2FyZCI6ICIzNzAyODUyMDA0MDMxMTQxNDciLAogICAgImNvbSI6IDMKfQ==");
         log.info(String.format("查询请求数据: %s", Json.toString(request)));
         GetAssetDownloadUrlResponse response = CLIENT.request(request);
         log.info(String.format("查询响应数据: %s", response.getAsset().getUrl()));

@@ -5,6 +5,8 @@ import com.workersaas.sdk.common.base.Json;
 import com.workersaas.sdk.common.base.WorkerSaasClient;
 import com.workersaas.sdk.common.base.WorkerSaasConfig;
 import com.workersaas.sdk.common.enums.WorkerSaasArithmetic;
+import com.workersaas.sdk.model.order.query.QueryTaskAgreementDetailRequest;
+import com.workersaas.sdk.model.order.query.QueryTaskAgreementDetailResponse;
 import com.workersaas.sdk.model.park.order.GetParkOrderDetailRequest;
 import com.workersaas.sdk.model.park.order.GetParkOrderDetailResponse;
 import org.apache.commons.logging.Log;
@@ -37,13 +39,24 @@ public class WorkerSaasParkOrderTest {
 
     public static void main(String[] args) {
         query();
+        query2();
     }
 
     private static void query() {
         GetParkOrderDetailRequest request = new GetParkOrderDetailRequest();
-        request.setTradeNo("P20251118184216001");
+        request.setTradeNo("P20251201000052183");
         log.info(String.format("查询请求数据: %s", Json.toString(request)));
         GetParkOrderDetailResponse response = client.request(request);
+        log.info(String.format("查询响应数据: %s", Json.toString(response)));
+    }
+
+
+
+    private static void query2() {
+        QueryTaskAgreementDetailRequest request = new QueryTaskAgreementDetailRequest();
+        request.setTradeNo("P20251201000052183");
+        log.info(String.format("查询请求数据: %s", Json.toString(request)));
+        QueryTaskAgreementDetailResponse response = client.request(request);
         log.info(String.format("查询响应数据: %s", Json.toString(response)));
     }
 
