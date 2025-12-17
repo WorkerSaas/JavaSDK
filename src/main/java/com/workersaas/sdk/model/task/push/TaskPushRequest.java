@@ -26,6 +26,8 @@ public class TaskPushRequest extends AbstractRequest<TaskPushResponse> {
 
     private String phone;
 
+    private String address;
+
     public Long getTaskId() {
         return taskId;
     }
@@ -59,6 +61,15 @@ public class TaskPushRequest extends AbstractRequest<TaskPushResponse> {
 
     public TaskPushRequest setPhone(String phone) {
         this.phone = phone;
+        return this;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public TaskPushRequest setAddress(String address) {
+        this.address = address;
         return this;
     }
 }
