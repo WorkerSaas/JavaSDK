@@ -9,6 +9,7 @@ import com.workersaas.sdk.model.enterprise.park.EnterpriseParkModel;
  */
 public class ChargeVo {
     private Long id;
+    private Double balance;
     private String tradeNumber;
     private String bankAccount;
     private String bankAccountTo;
@@ -21,6 +22,14 @@ public class ChargeVo {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(Double balance) {
+        this.balance = balance;
     }
 
     public String getTradeNumber() {
