@@ -41,10 +41,10 @@ public class WorkerSaasOrderTest {
 
     public static void main(String[] args) {
         // 创建订单
-//        String outerTradeNo = create();
+        String outerTradeNo = create();
 
         // 查询已创建的订单
-        query("P20251201000052183");
+//        query("D20251202000000005");
     }
 
     /**
@@ -55,10 +55,10 @@ public class WorkerSaasOrderTest {
     private static String create() {
         // 设置参数
         OrderCreateRequest request = new OrderCreateRequest()
-                .setOuterTradeNo("D20251102000000005")
+                .setOuterTradeNo("D20251202400000006")
                 .setBizAccount("13888888888")
                 .setTaskId(5L)
-                .setBalance(1D)
+                .setBalance(0.2D)
                 .setReason("服务费")
                 .setPayAccount("majhamm@qq.com")
                 .setIdCardType(IdCardType.CHINA_ID_CARD)

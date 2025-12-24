@@ -10,6 +10,8 @@ import com.workersaas.sdk.model.enterprise.park.list.EnterpriseParkGetListReques
 import com.workersaas.sdk.model.enterprise.park.list.EnterpriseParkGetListResponse;
 import com.workersaas.sdk.model.enterprise.park.query.EnterpriseParkQueryRequest;
 import com.workersaas.sdk.model.enterprise.park.query.EnterpriseParkQueryResponse;
+import com.workersaas.sdk.model.park.charge.GetParkChargePageRequest;
+import com.workersaas.sdk.model.park.charge.GetParkChargePageResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -41,12 +43,15 @@ public class WorkerSaasEnterpriseParkTest {
     }
 
     public static void main(String[] args) {
+        getChargePage();
+
+
         // 查询企业园区列表
-        List<EnterpriseParkModel> enterpriseParkList = getList();
-        long enterpriseParkId = enterpriseParkList.isEmpty() ? 1L : enterpriseParkList.get(0).getId();
+//        List<EnterpriseParkModel> enterpriseParkList = getList();
+//        long enterpriseParkId = enterpriseParkList.isEmpty() ? 1L : enterpriseParkList.get(0).getId();
 
         // 查询企业园区详情
-        query(enterpriseParkId);
+//        query(enterpriseParkId);
     }
 
     /**
@@ -58,6 +63,13 @@ public class WorkerSaasEnterpriseParkTest {
         EnterpriseParkGetListResponse response = client.request(request);
         log.info(String.format("查询企业园区可用列表响应数据: %s", Json.toString(response)));
         return response.getEnterpriseParkList();
+    }
+
+
+    private static void getChargePage() {
+        GetParkChargePageRequest request = new GetParkChargePageRequest();
+        GetParkChargePageResponse response = client.request(request);
+        log.info(String.format("查询企业园区可用列表响应数据: %s", Json.toString(response)));
     }
 
     private static void query(long enterpriseParkId) {

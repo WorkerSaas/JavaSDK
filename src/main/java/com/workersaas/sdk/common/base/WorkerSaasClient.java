@@ -50,8 +50,7 @@ public class WorkerSaasClient {
         }
         try {
             RES res = targetClass.newInstance();
-            res.parseData(content);
-            return res;
+            return res.parseData(content);
         } catch (InstantiationException | IllegalAccessException exception) {
             DebugUtil.show("创建对象失败", exception.getMessage());
             throw new WorkerSaasException(exception.getMessage());
