@@ -2,9 +2,6 @@ package com.workersaas.sdk.park;
 
 import com.workersaas.sdk.Config;
 import com.workersaas.sdk.common.base.Json;
-import com.workersaas.sdk.common.base.WorkerSaasClient;
-import com.workersaas.sdk.common.base.WorkerSaasConfig;
-import com.workersaas.sdk.common.enums.WorkerSaasArithmetic;
 import com.workersaas.sdk.model.park.enterprise.ParkEnterpriseModel;
 import com.workersaas.sdk.model.park.enterprise.list.ParkEnterpriseGetListRequest;
 import com.workersaas.sdk.model.park.enterprise.list.ParkEnterpriseGetListResponse;
@@ -26,20 +23,6 @@ public class WorkerSaasParkEnterpriseTest {
      */
     private static final Log log = LogFactory.getLog(WorkerSaasParkEnterpriseTest.class);
 
-    /**
-     * WorkerSaas客户端
-     */
-    private static final WorkerSaasClient client;
-
-    static {
-        WorkerSaasConfig workerSaasConfig = WorkerSaasConfig.create()
-                .setAppKey(Config.APP_KEY)
-                .setAppSecret(Config.APP_SECRET)
-                .setGateway(Config.GATEWAY)
-                .setArithmetic(WorkerSaasArithmetic.AES);
-        client = WorkerSaasClient.create(workerSaasConfig);
-    }
-
     public static void main(String[] args) {
         // 查询企业园区列表
         List<ParkEnterpriseModel> enterpriseParkList = getList();
@@ -55,7 +38,7 @@ public class WorkerSaasParkEnterpriseTest {
     private static List<ParkEnterpriseModel> getList() {
         ParkEnterpriseGetListRequest request = new ParkEnterpriseGetListRequest();
         log.info(String.format("查询企业园区可用列表请求数据: %s", Json.toString(request)));
-        ParkEnterpriseGetListResponse response = client.request(request);
+        ParkEnterpriseGetListResponse response = Config.CLIENT.request(request);
         log.info(String.format("查询企业园区可用列表响应数据: %s", Json.toString(response)));
         return response.getParkEnterpriseList();
     }
@@ -64,7 +47,7 @@ public class WorkerSaasParkEnterpriseTest {
         ParkEnterpriseQueryRequest request = new ParkEnterpriseQueryRequest();
         request.setId(enterpriseParkId);
         log.info(String.format("查询企业园区详情请求数据: %s", Json.toString(request)));
-        ParkEnterpriseQueryResponse response = client.request(request);
+        ParkEnterpriseQueryResponse response = Config.CLIENT.request(request);
         log.info(String.format("查询企业园区详情响应数据: %s", Json.toString(response)));
     }
 

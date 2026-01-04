@@ -2,9 +2,6 @@ package com.workersaas.sdk.order;
 
 import com.workersaas.sdk.Config;
 import com.workersaas.sdk.common.base.Json;
-import com.workersaas.sdk.common.base.WorkerSaasClient;
-import com.workersaas.sdk.common.base.WorkerSaasConfig;
-import com.workersaas.sdk.common.enums.WorkerSaasArithmetic;
 import com.workersaas.sdk.enums.IdCardType;
 import com.workersaas.sdk.model.order.create.OrderCreateRequest;
 import com.workersaas.sdk.model.order.create.OrderCreateResponse;
@@ -24,20 +21,6 @@ public class WorkerSaasOrderTest {
      * 日志
      */
     private static final Log log = LogFactory.getLog(WorkerSaasOrderTest.class);
-
-    /**
-     * WorkerSaas客户端
-     */
-    private static final WorkerSaasClient CLIENT;
-
-    static {
-        WorkerSaasConfig workerSaasConfig = WorkerSaasConfig.create()
-                .setAppKey(Config.APP_KEY)
-                .setAppSecret(Config.APP_SECRET)
-                .setGateway(Config.GATEWAY)
-                .setArithmetic(WorkerSaasArithmetic.AES);
-        CLIENT = WorkerSaasClient.create(workerSaasConfig);
-    }
 
     public static void main(String[] args) {
         // 创建订单
@@ -64,7 +47,7 @@ public class WorkerSaasOrderTest {
                 .setIdCardType(IdCardType.CHINA_ID_CARD)
                 .setIdCard("500240199110030157");
         log.info(String.format("创建订单请求数据: %s", Json.toString(request)));
-        OrderCreateResponse response = CLIENT.request(request);
+        OrderCreateResponse response = Config.CLIENT.request(request);
         log.info(String.format("创建订单响应数据: %s", Json.toString(response)));
         return response.getOrder().getOuterTradeNo();
     }
@@ -78,7 +61,7 @@ public class WorkerSaasOrderTest {
         OrderQueryRequest request = new OrderQueryRequest()
                 .setOuterTradeNo(outerTradeNo);
         log.info(String.format("查询订单请求数据: %s", Json.toString(request)));
-        OrderQueryResponse response = CLIENT.request(request);
+        OrderQueryResponse response = Config.CLIENT.request(request);
         log.info(String.format("查询订单响应数据: %s", Json.toString(response)));
     }
 }

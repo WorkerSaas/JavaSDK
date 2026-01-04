@@ -2,9 +2,6 @@ package com.workersaas.sdk.asset.order;
 
 import com.workersaas.sdk.Config;
 import com.workersaas.sdk.common.base.Json;
-import com.workersaas.sdk.common.base.WorkerSaasClient;
-import com.workersaas.sdk.common.base.WorkerSaasConfig;
-import com.workersaas.sdk.common.enums.WorkerSaasArithmetic;
 import com.workersaas.sdk.model.asset.GetAssetDownloadUrlRequest;
 import com.workersaas.sdk.model.asset.GetAssetDownloadUrlResponse;
 import org.apache.commons.logging.Log;
@@ -22,20 +19,6 @@ public class WorkerSaasAssetTest {
      */
     private static final Log log = LogFactory.getLog(WorkerSaasAssetTest.class);
 
-    /**
-     * WorkerSaas客户端
-     */
-    private static final WorkerSaasClient CLIENT;
-
-    static {
-        WorkerSaasConfig workerSaasConfig = WorkerSaasConfig.create()
-                .setAppKey(Config.APP_KEY)
-                .setAppSecret(Config.APP_SECRET)
-                .setGateway(Config.GATEWAY)
-                .setArithmetic(WorkerSaasArithmetic.AES);
-        CLIENT = WorkerSaasClient.create(workerSaasConfig);
-    }
-
     public static void main(String[] args) {
         getDownloadUrl();
     }
@@ -44,7 +27,7 @@ public class WorkerSaasAssetTest {
         GetAssetDownloadUrlRequest request = new GetAssetDownloadUrlRequest()
                 .setUrl("/agreement/push/ewogICAgImlkQ2FyZCI6ICIzNzAyODUyMDA0MDMxMTQxNDciLAogICAgImNvbSI6IDMKfQ==");
         log.info(String.format("查询请求数据: %s", Json.toString(request)));
-        GetAssetDownloadUrlResponse response = CLIENT.request(request);
+        GetAssetDownloadUrlResponse response = Config.CLIENT.request(request);
         log.info(String.format("查询响应数据: %s", response.getAsset().getUrl()));
     }
 }

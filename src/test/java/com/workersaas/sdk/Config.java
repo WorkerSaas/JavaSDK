@@ -1,15 +1,27 @@
 package com.workersaas.sdk;
 
+import com.workersaas.sdk.common.base.WorkerSaasClient;
+import com.workersaas.sdk.common.base.WorkerSaasConfig;
 import com.workersaas.sdk.common.base.WorkerSaasConstant;
+import com.workersaas.sdk.common.enums.WorkerSaasArithmetic;
 
 public class Config {
-    // 企业
-//    public static final String APP_KEY = "enterprise";
+    public static final String APP_KEY = "";
+    public static final String APP_SECRET = "";
 
-    // 园区
-    public static final String APP_KEY = "park";
-    public static final String APP_SECRET = "/GipF4ZC7wUiUCPkvgQJ6o5ukFGM/LS/ykmSclTPhK0=";
+    public static final String GATEWAY = WorkerSaasConstant.GATEWAY_PRODUCTION;
 
+    /**
+     * WorkerSaas 客户端
+     */
+    public static final WorkerSaasClient CLIENT;
 
-    public static final String GATEWAY = WorkerSaasConstant.GATEWAY_LOCAL;
+    static {
+        WorkerSaasConfig workerSaasConfig = WorkerSaasConfig.create()
+                .setAppKey(APP_KEY)
+                .setAppSecret(APP_SECRET)
+                .setGateway(GATEWAY)
+                .setArithmetic(WorkerSaasArithmetic.AES);
+        CLIENT = WorkerSaasClient.create(workerSaasConfig);
+    }
 }

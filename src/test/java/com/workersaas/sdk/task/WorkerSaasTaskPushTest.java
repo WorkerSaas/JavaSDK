@@ -2,9 +2,6 @@ package com.workersaas.sdk.task;
 
 import com.workersaas.sdk.Config;
 import com.workersaas.sdk.common.base.Json;
-import com.workersaas.sdk.common.base.WorkerSaasClient;
-import com.workersaas.sdk.common.base.WorkerSaasConfig;
-import com.workersaas.sdk.common.enums.WorkerSaasArithmetic;
 import com.workersaas.sdk.model.task.push.TaskPushRequest;
 import com.workersaas.sdk.model.task.push.TaskPushResponse;
 import org.apache.commons.logging.Log;
@@ -19,20 +16,6 @@ public class WorkerSaasTaskPushTest {
      */
     private static final Log log = LogFactory.getLog(WorkerSaasTaskPushTest.class);
 
-    /**
-     * WorkerSaas客户端
-     */
-    private static final WorkerSaasClient CLIENT;
-
-    static {
-        WorkerSaasConfig workerSaasConfig = WorkerSaasConfig.create()
-                .setAppKey(Config.APP_KEY)
-                .setAppSecret(Config.APP_SECRET)
-                .setGateway(Config.GATEWAY)
-                .setArithmetic(WorkerSaasArithmetic.AES);
-        CLIENT = WorkerSaasClient.create(workerSaasConfig);
-    }
-
     public static void main(String[] args) {
         TaskPushRequest request = new TaskPushRequest()
                 .setTaskId(5L)
@@ -40,7 +23,7 @@ public class WorkerSaasTaskPushTest {
                 .setRealName("马建")
                 .setPhone("18523749565");
         log.info(String.format("报名任务参数: %s", Json.toString(request)));
-        TaskPushResponse response = CLIENT.request(request);
+        TaskPushResponse response = Config.CLIENT.request(request);
         log.info(String.format("报名任务返回: %s", Json.toString(response)));
     }
 

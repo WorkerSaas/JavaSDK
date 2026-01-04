@@ -2,9 +2,6 @@ package com.workersaas.sdk.park;
 
 import com.workersaas.sdk.Config;
 import com.workersaas.sdk.common.base.Json;
-import com.workersaas.sdk.common.base.WorkerSaasClient;
-import com.workersaas.sdk.common.base.WorkerSaasConfig;
-import com.workersaas.sdk.common.enums.WorkerSaasArithmetic;
 import com.workersaas.sdk.model.order.OrderModel;
 import com.workersaas.sdk.model.order.query.QueryTaskAgreementDetailRequest;
 import com.workersaas.sdk.model.order.query.QueryTaskAgreementDetailResponse;
@@ -26,20 +23,6 @@ public class WorkerSaasParkOrderTest {
      */
     private static final Log log = LogFactory.getLog(WorkerSaasParkOrderTest.class);
 
-    /**
-     * WorkerSaas客户端
-     */
-    private static final WorkerSaasClient client;
-
-    static {
-        WorkerSaasConfig workerSaasConfig = WorkerSaasConfig.create()
-                .setAppKey(Config.APP_KEY)
-                .setAppSecret(Config.APP_SECRET)
-                .setGateway(Config.GATEWAY)
-                .setArithmetic(WorkerSaasArithmetic.AES);
-        client = WorkerSaasClient.create(workerSaasConfig);
-    }
-
     public static void main(String[] args) {
         queryPage();
 //        query();
@@ -52,7 +35,7 @@ public class WorkerSaasParkOrderTest {
         filter.setPayTimeFrom(1764532800000L);
         filter.setPayTimeTo(1764532860000L);
         request.setFilter(filter);
-        GetParkOrderPageResponse response = client.request(request);
+        GetParkOrderPageResponse response = Config.CLIENT.request(request);
         log.info(String.format("查询响应数据: %s", Json.toString(response)));
     }
 
@@ -60,17 +43,16 @@ public class WorkerSaasParkOrderTest {
         GetParkOrderDetailRequest request = new GetParkOrderDetailRequest();
         request.setTradeNo("P20251201000052183");
         log.info(String.format("查询请求数据: %s", Json.toString(request)));
-        GetParkOrderDetailResponse response = client.request(request);
+        GetParkOrderDetailResponse response = Config.CLIENT.request(request);
         log.info(String.format("查询响应数据: %s", Json.toString(response)));
     }
-
 
 
     private static void query2() {
         QueryTaskAgreementDetailRequest request = new QueryTaskAgreementDetailRequest();
         request.setTradeNo("P20251201000052183");
         log.info(String.format("查询请求数据: %s", Json.toString(request)));
-        QueryTaskAgreementDetailResponse response = client.request(request);
+        QueryTaskAgreementDetailResponse response = Config.CLIENT.request(request);
         log.info(String.format("查询响应数据: %s", Json.toString(response)));
     }
 
