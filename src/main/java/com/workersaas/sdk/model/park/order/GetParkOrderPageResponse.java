@@ -1,8 +1,10 @@
-package com.workersaas.sdk.model.park.charge;
+package com.workersaas.sdk.model.park.order;
 
 import com.workersaas.sdk.common.base.AbstractResponse;
 import com.workersaas.sdk.common.base.Json;
 import com.workersaas.sdk.model.common.Page;
+import com.workersaas.sdk.model.order.OrderModel;
+import com.workersaas.sdk.model.park.charge.ChargeVo;
 
 import java.util.List;
 
@@ -11,10 +13,10 @@ import java.util.List;
  *
  * @author Hamm.cn
  */
-public class GetParkChargePageResponse extends AbstractResponse<GetParkChargePageResponse> {
+public class GetParkOrderPageResponse extends AbstractResponse<GetParkOrderPageResponse> {
     private Integer total;
     private Integer pageCount;
-    private List<ChargeVo> list;
+    private List<OrderModel> list;
     private Page page;
 
     public Integer getTotal() {
@@ -33,11 +35,11 @@ public class GetParkChargePageResponse extends AbstractResponse<GetParkChargePag
         this.pageCount = pageCount;
     }
 
-    public List<ChargeVo> getList() {
+    public List<OrderModel> getList() {
         return list;
     }
 
-    public void setList(List<ChargeVo> list) {
+    public void setList(List<OrderModel> list) {
         this.list = list;
     }
 
@@ -50,7 +52,7 @@ public class GetParkChargePageResponse extends AbstractResponse<GetParkChargePag
     }
 
     @Override
-    public GetParkChargePageResponse parseData(String data) {
-        return Json.parse(data, GetParkChargePageResponse.class);
+    public GetParkOrderPageResponse parseData(String data) {
+        return Json.parse(data, GetParkOrderPageResponse.class);
     }
 }

@@ -81,6 +81,26 @@ public class OrderModel {
      */
     private String extension;
 
+    private Long payTimeFrom;
+
+    private Long payTimeTo;
+
+    public void setPayTimeFrom(Long payTimeFrom) {
+        this.payTimeFrom = payTimeFrom;
+    }
+
+    public Long getPayTimeFrom() {
+        return payTimeFrom;
+    }
+
+    public void setPayTimeTo(Long payTimeTo) {
+        this.payTimeTo = payTimeTo;
+    }
+
+    public Long getPayTimeTo() {
+        return payTimeTo;
+    }
+
     public String getExtension() {
         return extension;
     }

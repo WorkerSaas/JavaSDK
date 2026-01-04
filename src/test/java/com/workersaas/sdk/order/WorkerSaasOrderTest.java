@@ -55,12 +55,12 @@ public class WorkerSaasOrderTest {
     private static String create() {
         // 设置参数
         OrderCreateRequest request = new OrderCreateRequest()
-                .setOuterTradeNo("D20251202400000006")
+                .setOuterTradeNo("D20251202504000006")
                 .setBizAccount("13888888888")
                 .setTaskId(5L)
                 .setBalance(0.2D)
                 .setReason("服务费")
-                .setPayAccount("majhamm@qq.com")
+                .setPayAccount("6214863473617777")
                 .setIdCardType(IdCardType.CHINA_ID_CARD)
                 .setIdCard("500240199110030157");
         log.info(String.format("创建订单请求数据: %s", Json.toString(request)));
