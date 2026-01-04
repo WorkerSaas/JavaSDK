@@ -16,7 +16,7 @@ public class WorkerSaasRequest {
     private String appKey;
 
     /**
-     * 设置AppKey
+     * 设置 AppKey
      *
      * @param appKey AppKey
      * @return 当前实例
@@ -27,7 +27,7 @@ public class WorkerSaasRequest {
     }
 
     /**
-     * 获取AppKey
+     * 获取 AppKey
      *
      * @return AppKey
      */
@@ -116,7 +116,7 @@ public class WorkerSaasRequest {
     private String nonce = RandomUtil.randomString();
 
     /**
-     * 设置Nonce
+     * 设置 Nonce
      *
      * @param nonce Nonce
      * @return 当前实例
@@ -127,7 +127,7 @@ public class WorkerSaasRequest {
     }
 
     /**
-     * 获取Nonce
+     * 获取 Nonce
      *
      * @return Nonce
      */

@@ -7,7 +7,7 @@ package com.workersaas.sdk.common.interfaces;
  */
 public interface IDictionary {
     /**
-     * 获取枚举的key
+     * 获取枚举的 key
      *
      * @return key
      */
@@ -21,9 +21,9 @@ public interface IDictionary {
     String getLabel();
 
     /**
-     * 判断Key是否相等
+     * 判断 Key 是否相等
      *
-     * @param key 被判断的Key
+     * @param key 被判断的 Key
      * @return 对比结果
      */
     default boolean equalsKey(int key) {
@@ -31,9 +31,9 @@ public interface IDictionary {
     }
 
     /**
-     * 判断Key是否不相等
+     * 判断 Key 是否不相等
      *
-     * @param key 被判断的Key
+     * @param key 被判断的 Key
      * @return 对比结果
      */
     default boolean notEqualsKey(int key) {

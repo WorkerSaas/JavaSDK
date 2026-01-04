@@ -19,17 +19,17 @@ import java.util.Objects;
  */
 public class HttpUtil {
     /**
-     * Json请求头
+     * Json 请求头
      */
     public static final String APPLICATION_JSON = "application/json";
 
     /**
-     * HTTP客户端
+     * HTTP 客户端
      */
     private static final CloseableHttpClient HTTP_CLIENT = HttpClients.createDefault();
 
     /**
-     * 发起Post请求
+     * 发起 Post 请求
      *
      * @param url  URL
      * @param json Json

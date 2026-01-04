@@ -1,7 +1,7 @@
 package com.workersaas.sdk.common.base;
 
 /**
- * <h1>AbstractResponse</h1>
+ * <h1>抽象响应模型</h1>
  *
  * @param <R> 响应模型
  * @author Hamm.cn

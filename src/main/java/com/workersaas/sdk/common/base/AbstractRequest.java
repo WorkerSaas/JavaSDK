@@ -3,7 +3,7 @@ package com.workersaas.sdk.common.base;
 import java.lang.reflect.ParameterizedType;
 
 /**
- * <h1>AbstractRequest</h1>
+ * <h1>抽象请求模型</h1>
  *
  * @param <R> 响应模型
  * @author Hamm.cn

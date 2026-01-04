@@ -93,7 +93,7 @@ public class AesUtil {
     }
 
     /**
-     * 获取Cipher
+     * 获取 Cipher
      *
      * @param mode 模式
      * @return Cipher

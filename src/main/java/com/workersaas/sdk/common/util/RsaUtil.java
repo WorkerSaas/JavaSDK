@@ -13,7 +13,7 @@ import java.util.Base64;
  */
 public class RsaUtil {
     /**
-     * 加密算法KEY长度
+     * 加密算法 KEY 长度
      */
     private static final int CRYPT_KEY_SIZE = 2048;
 
@@ -129,9 +129,9 @@ public class RsaUtil {
     }
 
     /**
-     * RSA处理方法
+     * RSA 处理方法
      *
-     * @param cipher      RSA实例
+     * @param cipher      RSA 实例
      * @param sourceBytes 加解密原始数据
      * @param blockSize   分片大小
      * @return 加解密结果

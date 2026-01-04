@@ -7,12 +7,12 @@ package com.workersaas.sdk.common.enums;
  */
 public enum WorkerSaasArithmetic {
     /**
-     * AES算法
+     * AES 算法
      */
     AES,
 
     /**
-     * RSA算法
+     * RSA 算法
      */
     RSA,
 

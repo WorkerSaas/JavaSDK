@@ -119,7 +119,7 @@ public class WorkerSaasClient {
     }
 
     /**
-     * 创建Client
+     * 创建 Client
      *
      * @param workerSaasConfig 应用
      * @return Client
@@ -127,7 +127,7 @@ public class WorkerSaasClient {
      */
     public static WorkerSaasClient create(WorkerSaasConfig workerSaasConfig) {
         if (Objects.isNull(workerSaasConfig)) {
-            throw new IllegalArgumentException("无效的Config配置");
+            throw new IllegalArgumentException("无效的 Config 配置");
         }
         WorkerSaasClient workerSaasClient = new WorkerSaasClient();
         workerSaasClient.workerSaasConfig = workerSaasConfig;

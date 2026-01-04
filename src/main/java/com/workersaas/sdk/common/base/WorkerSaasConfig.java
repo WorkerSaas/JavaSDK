@@ -42,7 +42,7 @@ public class WorkerSaasConfig {
     private String publicKey;
 
     /**
-     * 获取AppKey
+     * 获取 AppKey
      *
      * @return AppKey
      */
@@ -51,7 +51,7 @@ public class WorkerSaasConfig {
     }
 
     /**
-     * 设置AppKey
+     * 设置 AppKey
      *
      * @param appKey AppKey
      * @return 当前实例
@@ -62,7 +62,7 @@ public class WorkerSaasConfig {
     }
 
     /**
-     * 获取AppSecret
+     * 获取 AppSecret
      *
      * @return AppSecret
      */
@@ -71,7 +71,7 @@ public class WorkerSaasConfig {
     }
 
     /**
-     * 设置AppSecret
+     * 设置 AppSecret
      *
      * @param appSecret AppSecret
      * @return 当前实例
