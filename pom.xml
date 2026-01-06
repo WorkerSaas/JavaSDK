@@ -91,11 +91,11 @@
             </plugin>
         </plugins>
     </build>
-    <url>https://github.com/HammCn/WorkerSaasSdk</url>
+    <url>https://github.com/WorkerSaas/JavaSDK</url>
     <scm>
-        <connection>scm:git:git://github.com/HammCn/WorkerSaasSdk.git</connection>
-        <developerConnection>scm:git:git://github.com/HammCn/WorkerSaasSdk.git</developerConnection>
-        <url>https://github.com/HammCn/WorkerSaasSdk</url>
+        <connection>scm:git:git://github.com/WorkerSaas/JavaSDK.git</connection>
+        <developerConnection>scm:git:git://github.com/WorkerSaas/JavaSDK.git</developerConnection>
+        <url>https://github.com/WorkerSaas/JavaSDK</url>
         <tag>HEAD</tag>
     </scm>
     <licenses>
