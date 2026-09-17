@@ -9,6 +9,8 @@ import com.workersaas.sdk.enums.IdCardType;
  * @author Hamm.cn
  */
 public class OrderCreateRequest extends AbstractRequest<OrderCreateResponse> {
+    private String orderCreateUrl = "order/create";
+
     /**
      * API地址
      *
@@ -16,7 +18,14 @@ public class OrderCreateRequest extends AbstractRequest<OrderCreateResponse> {
      */
     @Override
     protected String getApiUrl() {
-        return "order/create";
+        return orderCreateUrl;
+    }
+
+    public OrderCreateRequest() {
+    }
+
+    public OrderCreateRequest(String url) {
+        this.orderCreateUrl = url;
     }
 
     /**
