@@ -4,7 +4,7 @@ import com.workersaas.sdk.common.base.AbstractResponse;
 import com.workersaas.sdk.common.base.Json;
 
 /**
- * <h1>创建发放订单响应模型</h1>
+ * <h1>响应模型</h1>
  *
  * @author Hamm.cn
  */

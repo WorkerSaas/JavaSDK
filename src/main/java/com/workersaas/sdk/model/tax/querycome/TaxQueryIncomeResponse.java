@@ -5,7 +5,7 @@ import com.workersaas.sdk.common.base.Json;
 import com.workersaas.sdk.model.tax.IncomeModel;
 
 /**
- * <h1>创建发放订单响应模型</h1>
+ * <h1>响应模型</h1>
  *
  * @author Hamm.cn
  */

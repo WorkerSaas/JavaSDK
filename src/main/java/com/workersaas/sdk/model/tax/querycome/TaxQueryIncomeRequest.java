@@ -3,7 +3,7 @@ package com.workersaas.sdk.model.tax.querycome;
 import com.workersaas.sdk.common.base.AbstractRequest;
 
 /**
- * <h1>订单创建请求模型</h1>
+ * <h1>请求模型</h1>
  *
  * @author Hamm.cn
  */

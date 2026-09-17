@@ -4,7 +4,7 @@ import com.workersaas.sdk.common.base.AbstractRequest;
 import com.workersaas.sdk.enums.IdCardType;
 
 /**
- * <h1>订单创建请求模型</h1>
+ * <h1>请求模型</h1>
  *
  * @author Hamm.cn
  */
